@@ -1,0 +1,43 @@
+﻿@using AppWebController.Services
+@model AppWebController.ViewModels.Home.IndexViewModel
+@inject IStringManipulation StringManipulation
+@{
+    /*
+    taka moga da podpahna moi leyout
+
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+
+    */
+    ViewData["Title"] = "Home Page";
+}
+<partial name="_CurrentYearPartial" />
+<!--the same-->
+@await Html.PartialAsync("_CurrentYearPartial")
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <h2 greeting-string="Hello!!!!">@Model.UpperMessage</h2>
+    <h3>@ViewData["name"]</h3>
+    <h4>@ViewBag.Family</h4>
+    <h5>@this.Context.Request.Headers["User-Agent"]</h5>
+    <h6>@this.User.Identity.Name</h6>
+    <p>@Model.Year</p>
+    <p>@DateTime.UtcNow.DayOfWeek</p>
+</div>
+
+<ul>
+    @foreach (var name in Model.Names)
+    {
+        <li>@StringManipulation.MakeFirstLetterUpper(name)</li>
+    }
+</ul>
+
+@section Links {
+    <li class="nav-item">
+        <a class="nav-link text-dark" href="https://google.com">Google @DateTime.UtcNow.Year</a>
+    </li>
+}
+
+@section Scripts {
+    <!-- <script>alert('Hello')</script> -->
+}

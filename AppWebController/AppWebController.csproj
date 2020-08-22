@@ -12,5 +12,7 @@
     <Folder Include="ViewModels\NavBar\" />
     <Folder Include="Views\Shared\Components\" />
     <Folder Include="Views\Shared\Components\NavBar\" />
+    <Folder Include="Filters\" />
+    <Folder Include="Filters\ModelBinders\" />
   </ItemGroup>
 </Project>

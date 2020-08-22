@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/gospod1978/Desktop/SoftUni/WEB_022020/AppWebController/AppWebController/AppWebController.csproj": {}
+    "/Users/gospod1978/Desktop/SoftUni/WEB_022020/AppWebController/gospod.github.io/AppWebController/AppWebController.csproj": {}
   },
   "projects": {
-    "/Users/gospod1978/Desktop/SoftUni/WEB_022020/AppWebController/AppWebController/AppWebController.csproj": {
+    "/Users/gospod1978/Desktop/SoftUni/WEB_022020/AppWebController/gospod.github.io/AppWebController/AppWebController.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/gospod1978/Desktop/SoftUni/WEB_022020/AppWebController/AppWebController/AppWebController.csproj",
+        "projectUniqueName": "/Users/gospod1978/Desktop/SoftUni/WEB_022020/AppWebController/gospod.github.io/AppWebController/AppWebController.csproj",
         "projectName": "AppWebController",
-        "projectPath": "/Users/gospod1978/Desktop/SoftUni/WEB_022020/AppWebController/AppWebController/AppWebController.csproj",
+        "projectPath": "/Users/gospod1978/Desktop/SoftUni/WEB_022020/AppWebController/gospod.github.io/AppWebController/AppWebController.csproj",
         "packagesPath": "/Users/gospod1978/.nuget/packages/",
-        "outputPath": "/Users/gospod1978/Desktop/SoftUni/WEB_022020/AppWebController/AppWebController/obj/",
+        "outputPath": "/Users/gospod1978/Desktop/SoftUni/WEB_022020/AppWebController/gospod.github.io/AppWebController/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"

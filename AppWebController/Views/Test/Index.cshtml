@@ -1,0 +1,85 @@
+﻿@using AppWebController.Controllers
+@using AppWebController.Services
+@model TestController.TestInputModel
+<h1>Candidate for Junior Software Developer</h1>
+
+<div class="col-md-4">
+    <form asp-controller="Test" asp-action="Index" class="form">
+
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="Names.FirstName"></label>
+            <input asp-for="Names.FirstName" class="form-control" placeholder="FirsName" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Names.LastName"></label>
+            <input asp-for="Names.LastName" class="form-control" placeholder="LastName" />
+        </div>
+
+        <div class="form-group">
+            <!--<label asp-for="Email"></label>-->
+            <input asp-for="Email" class="form-control" placeholder="Email" />
+        </div>
+
+        <div class="form-group">
+            <!--<label asp-for="Egn"></label>-->
+            <input asp-for="Egn" class="form-control" placeholder="Egn" />
+        </div>
+
+        <div class="form-group">
+            <!--<label asp-for="University"></label>-->
+            <input asp-for="University" class="form-control" placeholder="University" />
+        </div>
+
+        <div class="form-group">
+            <!--<label asp-for="DateOfBirth"></label>-->
+            <input asp-for="DateOfBirth" class="form-control" />
+            <span asp-validation-for="Egn"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="YearsOfExperience"></label>
+            <input asp-for="YearsOfExperience" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="CandidateType"></label>
+            <!--tova e kogato izpolzvam v TestControllera enum-->
+            <!--<select asp-for="CandidateType" class="form-control" asp-items="@@Html.GetEnumSelectList<TestController.CandidateType>()"></select>-->
+            <select asp-for="CandidateType" class="form-control" asp-items="Model.AllTypes"></select>
+        </div>
+
+        <div class="form-group">
+            <h1>Position candidate</h1>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="Position" id="JuniroDeveloper" value="option1">
+                <label class="form-check-label" for="JuniroDeveloper">
+                    JuniroDeveloper
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="Position" id="RegularDeveloper" value="option2">
+                <label class="form-check-label" for="RegularDeveloper">
+                    RegularDeveloper
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="Position" id="SeniorDeveloper" value="option3">
+                <label class="form-check-label" for="SeniorDeveloper">
+                    SeniorDeveloper
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="Position" id="JuniorQa" value="option4">
+                <label class="form-check-label" for="JuniorQa">
+                    JuniorQa
+                </label>
+            </div>
+        </div>
+
+        <input type="submit" value="Candidate" class="btn btn-primary" />
+    </form>
+</div>
+
+

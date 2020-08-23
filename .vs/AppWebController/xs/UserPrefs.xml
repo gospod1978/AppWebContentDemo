@@ -1,0 +1,35 @@
+﻿<Properties StartupConfiguration="{2B661462-C177-465E-800D-DAF8B41DA1AC}|AppWebController">
+  <MonoDevelop.Ide.Workbench ActiveDocument="AppWebController/Views/Test/Index.cshtml">
+    <Files>
+      <File FileName="AppWebController/Views/Test/Index.cshtml" Line="88" Column="1" />
+      <File FileName="AppWebController/Startup.cs" Line="38" Column="53" />
+      <File FileName="AppWebController/Controllers/TestController.cs" Line="86" Column="19" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="AppWebController" expanded="True">
+            <Node name="AppWebController" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Services" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Shared" expanded="True" />
+                <Node name="Test" expanded="True" />
+              </Node>
+              <Node name="wwwroot" expanded="True">
+                <Node name="css" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.AppWebController PreferredExecutionTarget="/Applications/Firefox.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

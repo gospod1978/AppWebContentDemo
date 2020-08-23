@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Threading.Tasks;
 using AppWebController.Filters.ModelBinders;
 using AppWebController.Services;
+using AppWebController.ValidateAttributes;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.IO;
 
 namespace AppWebController.Controllers
 {
@@ -20,20 +24,20 @@ namespace AppWebController.Controllers
 
         public class Names
         {
-            [Required]
+            //[Required]
             public string FirstName { get; set; }
 
             public string LastName { get; set; }
         }
 
-        public class TestInputModel
+        public class TestInputModel : IValidatableObject
         {
             //[Range(2000, 3000)]
             //moga da iziskam stoinosti ako li ne error
             [BindNever]
             public int Id { get; set; }
 
-            [Required]
+            //[Required]
             public Names Names { get; set; }
 
             [Required]
@@ -44,9 +48,10 @@ namespace AppWebController.Controllers
             [Required]
             public string Email { get; set; }
 
-            [StringLength(10, MinimumLength = 10)]
+            //[StringLength(10, MinimumLength = 10)]
             [Required]
-            [RegularExpression("[0-9]{10}", ErrorMessage ="Kofti EGN")]
+            [EgnValidation]
+            //[RegularExpression("[0-9]{10}", ErrorMessage ="Kofti EGN")]
             public string Egn { get; set; }
 
             public DateTime DateOfBirth { get; set; }
@@ -57,6 +62,19 @@ namespace AppWebController.Controllers
             public int CandidateType { get; set; }
 
             public IEnumerable<SelectListItem> AllTypes { get; set; }
+
+            //tova e za fila IEnumerable<IFormFile> ako isam mnogo 
+            public IFormFile CV { get; set; }
+
+            public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+            {
+                if(int.Parse(this.Egn.Substring(0, 2))
+                    != this.DateOfBirth.Year % 100)
+                {
+                    yield return new ValidationResult
+                        ("Godinata na rajdane i EGN ne sa validna combinacia");
+                }
+            }
 
             // tova go izpolzvam kato izpolzvam enum no maham gornoto
             //public CandidateType CandidateType { get; set; }
@@ -81,9 +99,9 @@ namespace AppWebController.Controllers
             var model = new TestInputModel
             {
                 University = "SoftUni",
-                //Email = "@softuni.bg",
-                //Egn = "0000000000",
-                //YearsOfExperience = 1,
+                Email = "@softuni.bg",
+                Egn = "7808107580",
+                YearsOfExperience = 1,
                 AllTypes = positionService.GetAll(),
             };
 
@@ -91,14 +109,21 @@ namespace AppWebController.Controllers
         }
 
         [HttpPost]
-        public IActionResult Index(TestInputModel input)
+        public async Task<IActionResult> Index(TestInputModel input)
         {
             if (!this.ModelState.IsValid)
             {
                 input.AllTypes = positionService.GetAll();
                 return this.View(input);
             }
-            return this.Json(input);
+
+            using(var fileStream = new FileStream("user.doc", FileMode.Create))
+            {
+                await input.CV.CopyToAsync(fileStream);
+            }
+
+            //return this.Json(input); sled kato imame fail
+            return this.Redirect("/");
         }
     }
 }

@@ -1,7 +1,7 @@
-﻿<Properties StartupConfiguration="{2B661462-C177-465E-800D-DAF8B41DA1AC}|AppWebController">
-  <MonoDevelop.Ide.Workbench ActiveDocument="AppWebController/Views/Test/Index.cshtml">
+﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{2B661462-C177-465E-800D-DAF8B41DA1AC}|AppWebController">
+  <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="AppWebController/Views/Test/Index.cshtml" Line="88" Column="1" />
+      <File FileName="AppWebController/Views/Test/Index.cshtml" Line="85" Column="1" />
       <File FileName="AppWebController/Startup.cs" Line="38" Column="53" />
       <File FileName="AppWebController/Controllers/TestController.cs" Line="86" Column="19" />
     </Files>
@@ -9,7 +9,7 @@
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="AppWebController" expanded="True">
-            <Node name="AppWebController" expanded="True">
+            <Node name="AppWebController" expanded="True" selected="True">
               <Node name="Controllers" expanded="True" />
               <Node name="Services" expanded="True" />
               <Node name="Views" expanded="True">
